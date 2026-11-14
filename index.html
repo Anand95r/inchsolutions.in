@@ -21,6 +21,22 @@ a{color:#1F2933}a:hover{color:#000000}
 @media (max-width:620px){.g2,.g3,.g4{grid-template-columns:minmax(0,1fr)}}
 </style>
 <style>html{scroll-behavior:smooth}</style>
+<style>
+.pm{position:relative}
+.pm summary{list-style:none;cursor:pointer;color:#4B5563;display:inline-flex;align-items:center;gap:4px}
+.pm summary::-webkit-details-marker{display:none}
+.pm[open] summary{color:#1F2933}
+.pm-panel{position:absolute;right:0;top:calc(100% + 12px);width:300px;max-width:85vw;background:#FFFFFF;border:1px solid #E6E8EB;border-radius:14px;box-shadow:0 16px 40px rgba(31,41,51,.14);padding:12px;z-index:50;display:flex;flex-direction:column;gap:4px}
+.pm-head{margin:4px 8px 6px;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#8A6A00}
+.pm-item{display:flex;gap:12px;align-items:flex-start;padding:10px;border-radius:10px;text-decoration:none;color:#1F2933}
+.pm-item:hover{background:#F7F8FA}
+.pm-dot{width:28px;height:28px;border-radius:8px;flex:none;margin-top:2px}
+.pm-item strong{display:block;font-size:15px}
+.pm-item small{display:block;font-size:13px;color:#4B5563;line-height:1.4}
+.pm-item em{display:inline-block;margin-top:4px;font-style:normal;font-size:11px;font-weight:700;color:#0F766E;background:#E6F4F1;border-radius:999px;padding:2px 8px}
+.pm-all{margin:4px 8px 2px;font-size:14px;font-weight:700;color:#8A6A00;text-decoration:none}
+@media (max-width:620px){.pm-panel{left:0;right:auto}}
+</style>
 </head>
 <body>
 <div style="font-family: 'Plus Jakarta Sans', system-ui, sans-serif; color: #1F2933; background: #FFFFFF; min-height: 100vh">
@@ -41,7 +57,16 @@ a{color:#1F2933}a:hover{color:#000000}
 <a href="#solutions" style="color: #4B5563; text-decoration: none">Solutions</a>
 <a href="#why" style="color: #4B5563; text-decoration: none">Why us</a>
 <a href="#about" style="color: #4B5563; text-decoration: none">About</a>
-<a href="https://products.inchsolutions.in" style="color: #4B5563; text-decoration: none">Products</a>
+<details class="pm">
+<summary>Products <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+<div class="pm-panel">
+<p class="pm-head">Our products</p>
+<div id="pm-list">
+<a class="pm-item" href="https://products.inchsolutions.in/inchwealth/"><span class="pm-dot" style="background:#0F766E"></span><span><strong>Inch Wealth</strong><small>Net worth, investments &amp; expense tracker</small><em>Coming soon on Google Play</em></span></a>
+</div>
+<a class="pm-all" href="https://products.inchsolutions.in">View all products →</a>
+</div>
+</details>
 <a href="#contact" style="color: #4B5563; text-decoration: none">Contact</a>
 </nav>
 <a href="mailto:info@inchsolutions.in" style="background: #1F2933; color: #FFFFFF; text-decoration: none; padding: 12px 20px; border-radius: 8px; font-weight: 600; font-size: 15px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">Get in touch</a>
@@ -287,5 +312,22 @@ a{color:#1F2933}a:hover{color:#000000}
 </div>
 </footer>
 </div>
+<script>
+(function(){
+  var list=document.getElementById('pm-list'); if(!list) return;
+  function esc(t){var d=document.createElement('div');d.textContent=t==null?'':String(t);return d.innerHTML;}
+  fetch('https://products.inchsolutions.in/products.json',{cache:'no-cache'})
+    .then(function(r){return r.ok?r.json():null;})
+    .then(function(items){
+      if(!Array.isArray(items)||!items.length) return;
+      list.innerHTML=items.map(function(p){
+        var url=/^https:\/\//.test(p.url)?p.url:'https://products.inchsolutions.in';
+        var col=/^#[0-9a-fA-F]{3,6}$/.test(p.color||'')?p.color:'#FFC000';
+        return '<a class="pm-item" href="'+esc(url)+'"><span class="pm-dot" style="background:'+col+'"></span><span><strong>'+esc(p.name)+'</strong><small>'+esc(p.tagline)+'</small>'+(p.status?'<em>'+esc(p.status)+'</em>':'')+'</span></a>';
+      }).join('');
+    }).catch(function(){});
+  document.addEventListener('click',function(e){document.querySelectorAll('details.pm[open]').forEach(function(d){if(!d.contains(e.target)) d.removeAttribute('open');});});
+})();
+</script>
 </body>
 </html>
