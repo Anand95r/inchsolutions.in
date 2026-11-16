@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <title>Inch Solutions – SAP Business One Consulting, Add-ons &amp; Integrations | Chennai, India</title>
 <meta name="description" content="Inch Solutions, Chennai, Tamil Nadu: ERP consulting for SAP Business One — implementation, industry-specific add-ons, support, GST e-Invoice &amp; e-Way Bill, bank and weighbridge integrations, and web &amp; mobile apps.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -70,7 +70,7 @@ a{color:#1F2933}a:hover{color:#000000}
 </details>
 <a href="#contact" style="color: #4B5563; text-decoration: none">Contact</a>
 </nav>
-<a href="mailto:info@inchsolutions.in" style="background: #1F2933; color: #FFFFFF; text-decoration: none; padding: 12px 20px; border-radius: 8px; font-weight: 600; font-size: 15px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">Get in touch</a>
+<a href="#contact" style="background: #1F2933; color: #FFFFFF; text-decoration: none; padding: 12px 20px; border-radius: 8px; font-weight: 600; font-size: 15px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">Get in touch</a>
 </div>
 </header>
 
@@ -296,12 +296,29 @@ a{color:#1F2933}a:hover{color:#000000}
 
 <section id="contact">
 <div style="max-width: 1200px; margin: 0 auto; padding: 96px 24px">
-<div style="background: #FFF4CC; border-radius: 20px; padding: 56px 48px; display: flex; flex-wrap: wrap; gap: 32px; justify-content: space-between; align-items: center">
-<div style="flex: 1 1 460px; display: flex; flex-direction: column; gap: 10px">
+<div style="background: #FFF4CC; border-radius: 20px; padding: 48px; display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-start">
+<div style="flex: 1 1 360px; display: flex; flex-direction: column; gap: 14px">
+<p style="margin: 0; font-size: 14px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #8A6A00">Contact us</p>
 <h2 style="margin: 0; font-size: 36px; letter-spacing: -0.02em; font-weight: 800">Automate your business needs with us</h2>
-<p style="margin: 0; font-size: 17px; color: #4B5563">Chennai, Tamil Nadu, India</p>
+<p style="margin: 0; font-size: 17px; line-height: 1.6; color: #4B5563">Tell us about your SAP Business One requirement — implementation, an add-on, an integration, support or a mobile app. We usually reply within one working day.</p>
+<p style="margin: 0; font-size: 16px; color: #4B5563">Chennai, Tamil Nadu, India</p>
 </div>
-<a href="mailto:info@inchsolutions.in" style="background: #1F2933; color: #FFFFFF; text-decoration: none; padding: 16px 28px; border-radius: 10px; font-weight: 700; font-size: 17px">info@inchsolutions.in</a>
+<form id="contact-form" action="https://api.web3forms.com/submit" method="POST" style="flex: 1 1 460px; background: #FFFFFF; border-radius: 16px; padding: 28px; display: flex; flex-direction: column; gap: 14px; box-shadow: 0 10px 30px rgba(31,41,51,0.08)">
+<input type="hidden" name="access_key" value="d74c62c0-b302-4aa0-83ac-a22ffd5a356b">
+<input type="hidden" name="subject" value="New enquiry from inchsolutions.in">
+<input type="hidden" name="from_name" value="Inch Solutions website">
+<input type="hidden" name="topic" id="cf-topic" value="General enquiry">
+<div class="g2" style="gap: 14px">
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600; color: #1F2933">Name *<input type="text" name="name" required autocomplete="name" style="font: inherit; font-size: 15px; padding: 12px 14px; border: 1px solid #D1D5DB; border-radius: 8px; background: #FFFFFF; color: #1F2933; width: 100%; box-sizing: border-box"></label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600; color: #1F2933">Company<input type="text" name="company" autocomplete="organization" style="font: inherit; font-size: 15px; padding: 12px 14px; border: 1px solid #D1D5DB; border-radius: 8px; background: #FFFFFF; color: #1F2933; width: 100%; box-sizing: border-box"></label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600; color: #1F2933">Email *<input type="email" name="email" required autocomplete="email" style="font: inherit; font-size: 15px; padding: 12px 14px; border: 1px solid #D1D5DB; border-radius: 8px; background: #FFFFFF; color: #1F2933; width: 100%; box-sizing: border-box"></label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600; color: #1F2933">Phone<input type="tel" name="phone" autocomplete="tel" style="font: inherit; font-size: 15px; padding: 12px 14px; border: 1px solid #D1D5DB; border-radius: 8px; background: #FFFFFF; color: #1F2933; width: 100%; box-sizing: border-box"></label>
+</div>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600; color: #1F2933">How can we help? *<textarea name="message" rows="4" required style="font: inherit; font-size: 15px; padding: 12px 14px; border: 1px solid #D1D5DB; border-radius: 8px; background: #FFFFFF; color: #1F2933; width: 100%; box-sizing: border-box; resize: vertical"></textarea></label>
+<div class="h-captcha" data-captcha="true"></div>
+<button type="submit" id="cf-submit" style="background: #1F2933; color: #FFFFFF; border: 0; border-radius: 10px; padding: 15px 24px; font: inherit; font-weight: 700; font-size: 16px; cursor: pointer">Send enquiry</button>
+<p id="cf-status" role="status" style="margin: 0; font-size: 15px; font-weight: 600"></p>
+</form>
 </div>
 </div>
 </section>
@@ -328,6 +345,30 @@ a{color:#1F2933}a:hover{color:#000000}
       }).join('');
     }).catch(function(){});
   document.addEventListener('click',function(e){document.querySelectorAll('details.pm[open]').forEach(function(d){if(!d.contains(e.target)) d.removeAttribute('open');});});
+})();
+</script>
+<script src="https://web3forms.com/client/script.js" async defer></script>
+<script>
+(function(){
+  var form=document.getElementById('contact-form'); if(!form) return;
+  var status=document.getElementById('cf-status'), btn=document.getElementById('cf-submit');
+  var about=new URLSearchParams(location.search).get('about');
+  if(about){ document.getElementById('cf-topic').value=about.slice(0,80); form.querySelector('input[name="subject"]').value='New enquiry ('+about.slice(0,80)+') from inchsolutions.in'; }
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var data=new FormData(form);
+    var cap=data.get('h-captcha-response');
+    if(cap!==null && !cap){ status.style.color='#B42318'; status.textContent='Please complete the captcha.'; return; }
+    btn.disabled=true; btn.textContent='Sending…'; status.textContent='';
+    fetch('https://api.web3forms.com/submit',{method:'POST',body:data})
+      .then(function(r){return r.json();})
+      .then(function(res){
+        if(res.success){ status.style.color='#067647'; status.textContent='Thank you! Your enquiry has been sent. We will get back to you soon.'; form.reset(); }
+        else { status.style.color='#B42318'; status.textContent=res.message||'Something went wrong. Please try again.'; }
+      })
+      .catch(function(){ status.style.color='#B42318'; status.textContent='Could not send. Please check your connection and try again.'; })
+      .finally(function(){ btn.disabled=false; btn.textContent='Send enquiry'; if(window.hcaptcha){ try{hcaptcha.reset();}catch(x){} } });
+  });
 })();
 </script>
 </body>
